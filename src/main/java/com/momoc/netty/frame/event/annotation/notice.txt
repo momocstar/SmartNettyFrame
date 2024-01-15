@@ -1,0 +1,22 @@
+
+Spring 提供了一个观察者模式的事件处理方式，
+事件触发：
+    @Autowired
+    private ApplicationEventPublisher applicationEventPublisher;
+    applicationEventPublisher.publishEvent(new ItemReceiveEvent(this, insert));
+    事件接收：
+使用方法：
+ItemReceiveEvent 继承 ApplicationEvent
+    @Async
+    @EventListener(classes = ItemReceiveEvent.class)
+    public void wear(ItemReceiveEvent event) {
+        UserBackpack userBackpack = event.getUserBackpack();
+        ItemConfig itemConfig = itemCache.getById(userBackpack.getItemId());
+        if (ItemTypeEnum.BADGE.getType().equals(itemConfig.getType())) {
+            User user = userDao.getById(userBackpack.getUid());
+            if (Objects.isNull(user.getItemId())) {
+                userDao.wearingBadge(userBackpack.getUid(), userBackpack.getItemId());
+                userCache.userInfoChange(userBackpack.getUid());
+            }
+        }
+    }

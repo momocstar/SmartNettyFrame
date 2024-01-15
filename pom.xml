@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>3.1.1</version>
+		<relativePath/> <!-- lookup parent from repository -->
+	</parent>
+	<groupId>com.momoc.netty</groupId>
+	<artifactId>SmartNettyFrame</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>SmartNettyFrame</name>
+	<description>SmartNettyFrame</description>
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<java.version>17</java.version>
+	</properties>
+
+	<dependencies>
+		<!-- https://mvnrepository.com/artifact/io.netty/netty-all -->
+		<dependency>
+			<groupId>io.netty</groupId>
+			<artifactId>netty-all</artifactId>
+			<version>4.1.94.Final</version>
+		</dependency>
+<!--		<dependency>-->
+<!--			<groupId>org.springframework.boot</groupId>-->
+<!--			<artifactId>spring-boot-starter</artifactId>-->
+<!--		</dependency>-->
+
+<!--		<dependency>-->
+<!--			<groupId>org.springframework.boot</groupId>-->
+<!--			<artifactId>spring-boot-starter-test</artifactId>-->
+<!--			<scope>test</scope>-->
+<!--		</dependency>-->
+		<!-- https://mvnrepository.com/artifact/com.google.protobuf/protobuf-java -->
+		<dependency>
+			<groupId>com.google.protobuf</groupId>
+			<artifactId>protobuf-java</artifactId>
+			<version>3.23.3</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot</artifactId>
+			<version>3.1.1</version>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>1.7.21</version>
+		</dependency>
+<!--		<dependency>-->
+<!--			&lt;!&ndash; generate jar without third part jars &ndash;&gt;-->
+<!--			<groupId>org.springframework.boot.experimental</groupId>-->
+<!--			<artifactId>spring-boot-thin-layout</artifactId>-->
+<!--			<version>1.0.28.RELEASE</version>-->
+<!--		</dependency>-->
+
+	</dependencies>
+
+
+
+	<build>
+		<finalName>${project.artifactId}</finalName>
+<!--		<pluginManagement>-->
+<!--			<plugins>-->
+<!--				<plugin>-->
+<!--					<artifactId>maven-compiler-plugin</artifactId>-->
+<!--					<configuration>-->
+<!--						<source>${java.version}</source>-->
+<!--						<target>${java.version}</target>-->
+<!--					</configuration>-->
+<!--				</plugin>-->
+<!--			</plugins>-->
+<!--		</pluginManagement>-->
+		<plugins>
+
+<!--			<plugin>-->
+<!--				<groupId>org.springframework.boot</groupId>-->
+<!--				<artifactId>spring-boot-maven-plugin</artifactId>-->
+<!--			</plugin>-->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+					<source>${java.version}</source>
+					<target>${java.version}</target>
+                </configuration>
+            </plugin>
+        </plugins>
+	</build>
+
+</project>
